@@ -16,7 +16,7 @@ def create_person_list(people: list) -> list:
     [Person(person.get("name"), person.get("age")) for person in people]
     result_list = []
     for person in people:
-        person_instance = Person.people.get(person("name"))
+        person_instance = Person.people.get("name")
         wife_name = person.get("wife")
         husband_name = person.get("husband")
         if wife_name is not None:
