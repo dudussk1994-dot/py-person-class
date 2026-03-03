@@ -1,6 +1,4 @@
 class Person:
-    # write your code here
-    pass
     people = {}
 
     def __init__(self, name: str, age: int) -> None:
@@ -10,18 +8,17 @@ class Person:
 
 
 def create_person_list(people: list) -> list:
-    # write your code here
-    pass
     Person.people = {}
-    [Person(person.get("name"), person.get("age")) for person in people]
+    # Tworzymy wszystkie osoby
+    for person in people:
+        Person(person.get("name"), person.get("age"))
     result_list = []
     for person in people:
-        person_instance = Person.people.get("name")
+        person_instance = Person.people.get(person.get("name"))
         wife_name = person.get("wife")
         husband_name = person.get("husband")
         if wife_name is not None:
-            setattr(person_instance, "wife",
-                    Person.people.get(wife_name))
+            setattr(person_instance, "wife", Person.people.get(wife_name))
         if husband_name is not None:
             setattr(person_instance, "husband",
                     Person.people.get(husband_name))
